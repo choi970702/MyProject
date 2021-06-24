@@ -77,7 +77,18 @@
 	{
 		background-color: black;
 	}
-	a:visited{color: black;}
+	#choice
+	{
+		background-color: darkgray;
+		width: 90%;
+		margin: 20px auto;
+		padding: 5px;
+	}
+	select
+	{
+		width: 30%;
+		margin-right: 5%;
+	}
 </style>
 </head>
 <body>
@@ -107,6 +118,18 @@
 			<div><a href="board.jsp">게시판</a></div>
 			<div><a href="mypage.jsp">마이페이지</a></div>
 		</div>
+	</div>
+	<div id="choice">
+		<form action="search_choose.jsp">
+			<select name="choice">
+				<option value="foodname">음식이름으로 검색</option>
+				<option value="restaurant">가게 이름으로 검색</option>
+			</select>
+			<input type="radio" name="choose" value="distance">거리순
+			<input type="radio" name="choose" value="review">리뷰순
+			<input type="radio" name="choose" value="star">별점이 높은 순
+			<input type="submit" value="검색">
+		</form>
 	</div>
 	<div>
 		<footer>footer정보</footer>

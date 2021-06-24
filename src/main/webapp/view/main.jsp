@@ -108,7 +108,6 @@
 	{
 		background-color: black;
 	}
-	a:visited{color: black;}
 </style>
 <script type="text/javascript">
 	

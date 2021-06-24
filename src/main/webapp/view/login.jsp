@@ -77,7 +77,6 @@
 	{
 		background-color: black;
 	}
-	a:visited{color: black;}
 </style>
 </head>
 <body>
