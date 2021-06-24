@@ -5,12 +5,63 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	#top_addr
+	{
+		width: 60%;
+		margin-left: 2%;
+		height: 2%;
+		text-align: left;
+		float: left;
+		border: 2px solid black;
+	}
+	.btn
+	{
+		text-align: center;
+		height: 2%;
+		border: 2px solid black;
+	}
+	#top_btn
+	{
+		float: left;
+	}
+	.a_div
+	{
+		float: right;
+		width: 30%;
+		text-align: right;
+	}
+	a:hover
+	{
+		color: silver;
+		cursor: pointer;
+	}
+	#menu_id > div:hover
+	{
+		background-color: black;
+	}
+	a:visited{color: black;}
+	a
+	{
+		text-decoration: none;
+		color: black;
+	}
+	footer
+	{
+		background-color: gray;
+		width: 100%;
+		height: 60px;
+		font-size: 10px;
+		margin-top: 2%;
+		padding: 10px;
+	}
+</style>
 </head>
 <body>
 	<div>
-		<form>
-			<input id="top_addr" type="text" value="위치검색" name="addr_search" required>
-			<input id="top_btn" class="btn" type="button" value="검색" onclick="addr_search(this.form)">
+		<form action="addr_search.jsp" method="post">
+			<input id="top_addr" type="text" placeholder="위치검색" name="addr_search" required>
+			<input id="top_btn" class="btn" type="submit" value="검색">
 		</form>
 	</div>
 	<div>
@@ -37,9 +88,12 @@
 	new daum.roughmap.Lander({
 		"timestamp" : "1624432839749",
 		"key" : "26cht",
-		"mapWidth" : "600",
-		"mapHeight" : "300"
+		"mapWidth" : "900",
+		"mapHeight" : "380"
 	}).render();
 </script>
+	<div>
+		<footer>footer정보</footer>
+	</div>
 </body>
 </html>

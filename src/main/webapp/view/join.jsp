@@ -59,37 +59,6 @@
 		text-decoration: none;
 		color: black;
 	}
-	.div_in
-	{
-		float: left;
-		width: 50%;
-		text-align: center;
-		margin-top: 2%;
-		margin-bottom: 2%;
-	}
-	.in
-	{
-		border: 2px solid black;
-		width: 50%;
-	}
-	img
-	{
-		width: 40%;
-		height: 50%;
-	}
-	fieldset
-	{
-		width: 45%;
-		float: left;
-		margin-left: 1%;
-		margin-right: 1%;
-	}
-	textarea 
-	{
-		height: 80px;
-		width: 50%;
-		text-align: center;
-	}
 	footer
 	{
 		background-color: gray;
@@ -110,9 +79,6 @@
 	}
 	a:visited{color: black;}
 </style>
-<script type="text/javascript">
-	
-</script>
 </head>
 <body>
 	<div>
@@ -143,50 +109,7 @@
 		</div>
 	</div>
 	<div>
-		<div class="div_in">
-			<form action="food_search.jsp">
-				<!-- 음식으로 검색하기 -->
-				<input class="in" type="text" placeholder="음식이름" name="food_search" required>
-				<input class="btn" type="submit" value="검색">
-			</form>
-		</div>
-		<div class="div_in">
-			<form action="restaurant_search.jsp">
-				<!-- 음식점으로 검색하기 -->
-				<input class="in" type="text" placeholder="가게이름" name="restaurant_search" required>
-				<input class="btn" type="submit" value="검색">
-			</form>
-		</div>
-		<div>
-			<fieldset>
-				<legend>음식으로 검색</legend>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-			</fieldset>
-		</div>
-		<div>
-			<fieldset>
-				<legend>가게로 검색</legend>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-			</fieldset>
-		</div>
-	</div>
-	<div>
 		<footer>footer정보</footer>
 	</div>
-	
 </body>
 </html>
