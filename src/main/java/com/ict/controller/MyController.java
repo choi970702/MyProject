@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ict.model.Command;
 import com.ict.model.MainCommand;
+import com.ict.model.PickCommand;
+import com.ict.model.Search_ChooseCommand;
 
 @WebServlet("/MyController")
 public class MyController extends HttpServlet 
@@ -37,6 +39,12 @@ public class MyController extends HttpServlet
 		if (cmd.equalsIgnoreCase("main")) 
 		{
 			comm = new MainCommand();
+		}else if (cmd.equalsIgnoreCase("search_choose"))
+		{
+			comm = new Search_ChooseCommand();
+		}else if(cmd.equalsIgnoreCase("pick"))
+		{
+			comm = new PickCommand();
 		}
 		
 		String path = comm.exec(request, response);

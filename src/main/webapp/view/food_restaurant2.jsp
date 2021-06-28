@@ -96,50 +96,69 @@
 		height: 50%;
 	}
 </style>
+<script type="text/javascript">
+	function imgclick1() 
+	{
+		location.href="view/onelist.jsp";
+	}
+	function imgclick2() 
+	{
+		
+	}
+	function imgclick3() 
+	{
+		
+	}
+	function imgclick4() 
+	{
+		
+	}
+</script>
 </head>
 <body>
 	<div>
 		<!-- 위치 검색, 로그인 회원가입 태그 -->
 		<div>
-			<form action="addr_search.jsp" method="post">
+			<form action="view/addr_search.jsp" method="post">
 				<input type="text" id="top_addr" placeholder="위치를 쓰세요." name="addr_search" required>
 				<input type="submit" id="top_btn" class="btn"  value="검색" >
 			</form>
 		</div>
 		<div>
 			<div class="a_div" style="margin-right: 2%;">
-				<a href="main.jsp">home</a>
+				<a href="view/main.jsp">home</a>
 			</div>
 			<div class="a_div">
-				<a href="login.jsp">로그인 </a> &nbsp;|&nbsp;
-				<a href="join.jsp">회원가입</a>
+				<a href="view/login.jsp">로그인 </a> &nbsp;|&nbsp;
+				<a href="view/join.jsp">회원가입</a>
 			</div>
 		</div>
 	</div><br>
 	<!-- 메뉴바 -->
 	<div>
 		<div id="menu_id">
-			<div><a href="search.jsp">검색</a></div>
-			<div><a href="food_restaurant.jsp">음식 및 음식점 추천</a></div>
-			<div><a href="board.jsp">게시판</a></div>
-			<div><a href="mypage.jsp">마이페이지</a></div>
+			<div><a href="view/search.jsp">검색</a></div>
+			<div><a href="view/food_restaurant.jsp">음식 및 음식점 추천</a></div>
+			<div><a href="view/board.jsp">게시판</a></div>
+			<div><a href="view/mypage.jsp">마이페이지</a></div>
 		</div>
 	</div>
 	<div>
 			<fieldset>
 				<legend>이달의 추천 음식</legend>
 				<form style="text-align: center;" action="/MyController" method="post">
-					<input type="radio" name="food_pick" value="food_review">리뷰가 많은순
-					<input type="radio" name="food_pick" value="food_star">별점이 높은순
+					<input type="radio" name="food_pick" value="리뷰순">리뷰가 많은순
+					<input type="radio" name="food_pick" value="별점순">별점이 높은순
 					<input type="submit" value="검색">
 					<input type="hidden" name="cmd" value="pick">
 				</form>
+				<div style="text-align: center;">${food_pick }</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick1()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick2()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 			</fieldset>
@@ -148,17 +167,18 @@
 			<fieldset>
 				<legend>이달의 추천 가게</legend>
 				<form style="text-align: center;" action="/MyController" method="post">
-					<input type="radio" name="restaurant_pick" value="food_review">리뷰가 많은순
-					<input type="radio" name="restaurant_pick" value="food_star">별점이 높은순
+					<input type="radio" name="restaurant_pick" value="리뷰순">리뷰가 많은순
+					<input type="radio" name="restaurant_pick" value="별점순">별점이 높은순
 					<input type="submit" value="검색">
 					<input type="hidden" name="cmd" value="pick">
 				</form>
+				<div style="text-align: center;">${restaurant_pick }</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick3()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick4()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 			</fieldset>

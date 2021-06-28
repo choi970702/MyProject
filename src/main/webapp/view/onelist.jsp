@@ -65,7 +65,7 @@
 		width: 100%;
 		height: 60px;
 		font-size: 10px;
-		margin-top: 40%;
+		margin-bottom: 0px;
 		padding: 10px;
 	}
 	a:hover
@@ -77,25 +77,64 @@
 	{
 		background-color: black;
 	}
-	fieldset
+	#field1
 	{
-		width: 45%;
-		float: left;
-		margin-left: 1%;
-		margin-right: 1%;
+		width: 90%;
+		margin: auto;
+		margin-top: 4%;
 	}
-	textarea 
+	#logo_img
 	{
-		height: 80px;
+		width: 20%;
+		height: 20%;
+		float: left;
+	}
+	#home
+	{
+		float: left;
+		margin-top: 0%;
+		
+	}
+	#table
+	{
+		border: 1px solid black;
 		width: 50%;
+		margin: auto;
+	}
+	#review
+	{
+		width: 50%;
+		margin-right: 10%;
+		float: left;
+		text-align: right;
+	}
+	#review_write
+	{
+		width: 70%;
+	}
+	#field2
+	{
+		width: 90%;
+		margin: auto;
 		text-align: center;
 	}
-	img
+	.img
 	{
-		width: 40%;
-		height: 50%;
+		width: 50%;
+	}
+	.img_div
+	{
+		width: 33%;
+		float: left;
+		margin: auto;
 	}
 </style>
+<script type="text/javascript">
+	function way() 
+	{
+		location.href="loadfind.jsp";
+	}
+</script>
 </head>
 <body>
 	<div>
@@ -126,43 +165,62 @@
 		</div>
 	</div>
 	<div>
-			<fieldset>
-				<legend>이달의 추천 음식</legend>
-				<form style="text-align: center;" action="/MyController" method="post">
-					<input type="radio" name="food_pick" value="food_review">리뷰가 많은순
-					<input type="radio" name="food_pick" value="food_star">별점이 높은순
-					<input type="submit" value="검색">
-					<input type="hidden" name="cmd" value="pick">
+		<fieldset id="field1">
+			<div>
+				<img src="../image/logo.PNG" id="logo_img">
+			</div>
+			<div id="home">
+				<a href="" style="margin-top: 0px;">가게 홈페이지로 이동</a>
+				<br>
+				<span style="text-align: left;"> 
+					영업시간 : <br>
+					전화번호 : <br>
+					별점 : <br>
+					등등	<br>
+				</span>
+				<button onclick="way()">길찾기</button>
+			</div>
+			<div>
+				<table id="table">
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>글쓴이</th>
+							<th>내용</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>.</td>
+							<td>.</td>
+							<td>.</td>
+						</tr>
+					</tbody>
+				</table>
+				<form id="review">
+					<input id="review_btn" type="submit" value="search">
+					<input id="review_write" type="text" placeholder="리뷰쓰기">
 				</form>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-			</fieldset>
-		</div>
-		<div>
-			<fieldset>
-				<legend>이달의 추천 가게</legend>
-				<form style="text-align: center;" action="/MyController" method="post">
-					<input type="radio" name="restaurant_pick" value="food_review">리뷰가 많은순
-					<input type="radio" name="restaurant_pick" value="food_star">별점이 높은순
-					<input type="submit" value="검색">
-					<input type="hidden" name="cmd" value="pick">
-				</form>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-				<div>
-					<img alt="" src="../image/pic1.jpg">
-					<textarea>~~~~~~~~~~~</textarea>
-				</div>
-			</fieldset>
-		</div>
+			</div>
+			<div>
+				<fieldset id="field2">
+					<legend>메뉴판</legend>
+					<div class="img_div">
+						<img src="../image/pic1.jpg" class="img">
+						<h3>메뉴1</h3>
+					</div>
+					<div class="img_div">
+						<img src="../image/pic2.jpg" class="img">
+						<h3>메뉴2</h3>
+					</div>
+					<div class="img_div">
+						<img src="../image/pic3.jpg" class="img">
+						<h3>메뉴3</h3>
+					</div>
+				</fieldset>
+			</div>
+		</fieldset>
+	</div>
 	<div>
 		<footer>footer정보</footer>
 	</div>
