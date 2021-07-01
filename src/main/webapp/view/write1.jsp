@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,29 +31,6 @@
 		width: 30%;
 		text-align: right;
 	}
-	#menu_id
-	{
-		width: 80%;
-		text-align: center;
-		margin-top: 3%;
-		margin-left: 10%;
-	}
-	
-	#menu_id > div
-	{
-		width: 23%;
-		height: 40px;
-		display: inline-block;
-		text-align: center;
-		cursor: pointer;
-		line-height: 40px;
-		margin: auto;	
-		background-color: gray;
-	}
-	#menu_id > div > a
-	{
-		display: block;
-	}
 	a
 	{
 		text-decoration: none;
@@ -66,7 +42,7 @@
 		width: 100%;
 		height: 60px;
 		font-size: 10px;
-		margin-top: 40%;
+		margin-bottom: 0px;
 		padding: 10px;
 	}
 	a:hover
@@ -74,14 +50,43 @@
 		color: silver;
 		cursor: pointer;
 	}
-	#menu_id > div:hover
+	table, tr, td
 	{
-		background-color: black;
+		border: 1px solid black;
+		text-align: center;
+		margin: auto;
+	}
+	table
+	{
+		width: 90%;
+		height: 90%;
+		background-color: silver;
+	}
+	fieldset
+	{
+		width: 90%;
+		margin: auto;
+		height: 400px;
+		margin-bottom: 5%;
+	}
+	tr
+	{
+		background-color: #F6F6F6;
+	}
+	td > input
+	{
+		width: 80%;
 	}
 </style>
 <script type="text/javascript">
-	function boardlist() 
+	function writeok() 
 	{
+		alert("저장");
+		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
+	}
+	function writeno() 
+	{
+		alert("취소");
 		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
 	}
 </script>
@@ -105,61 +110,42 @@
 			</div>
 		</div>
 	</div><br>
-	<!-- 메뉴바 -->
 	<div>
-		<div id="menu_id">
-			<div><a href="search.jsp">검색</a></div>
-			<div><a href="food_restaurant.jsp">음식 및 음식점 추천</a></div>
-			<div><a onclick="boardlist()">게시판</a></div>
-			<div><a href="mypage.jsp">마이페이지</a></div>
-		</div>
-	</div>
-	<div>
-		<table>
-			<thead>
-				<tr>
-					<th colspan="3">나의 문의</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><a>문의1</a></td>
-					<td><button>수정하기</button></td>
-					<td><button>삭제</button></td>
-				</tr>
-			</tbody>
-			<tfoot>
-				
-			</tfoot>
-		</table>
-		
-		<table>
-			<thead>
-				<tr>
-					<th colspan="3">정보 수정</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-			</tbody>
-			<tfoot>
-				
-			</tfoot>
-		</table>
-		
-		<table>
-			<thead>
-				<tr>
-					<th colspan="2">좋아하는 음식점 리스트</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-			</tbody>
-			<tfoot>
-				
-			</tfoot>
-		</table>
+		<fieldset>
+			<table>
+				<thead>
+					<tr>
+						<th></th><th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width: 20%; height: 5%;">작성자</td>
+						<td><input type="text" name="id" value="ID" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td style="height: 5%;">제목</td>
+						<td><input type="text" name="title" placeholder="제목입력" required></td>
+					</tr>
+					<tr>
+						<td>내용</td>
+						<td><input type="text" name="content" placeholder="내용입력" required></td>
+					</tr>
+					<tr>
+						<td>답글</td>
+						<td><input type="text" name="content" placeholder="답글 내용" readonly></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2">
+							<button value="" onclick="writeok()">저장</button>
+							<button value="" onclick="writeno()">취소</button>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</fieldset>
 	</div>
 	<div>
 		<footer>footer정보</footer>

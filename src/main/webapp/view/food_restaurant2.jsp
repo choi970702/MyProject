@@ -113,6 +113,10 @@
 	{
 		
 	}
+	function boardlist() 
+	{
+		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
+	}
 </script>
 </head>
 <body>
@@ -139,14 +143,14 @@
 		<div id="menu_id">
 			<div><a href="view/search.jsp">검색</a></div>
 			<div><a href="view/food_restaurant.jsp">음식 및 음식점 추천</a></div>
-			<div><a href="view/board.jsp">게시판</a></div>
+			<div><a onclick="boardlist()">게시판</a></div>
 			<div><a href="view/mypage.jsp">마이페이지</a></div>
 		</div>
 	</div>
 	<div>
 			<fieldset>
 				<legend>이달의 추천 음식</legend>
-				<form style="text-align: center;" action="/MyController" method="post">
+				<form style="text-align: center;" action="${pageContext.request.contextPath}/MyController" method="post">
 					<input type="radio" name="food_pick" value="리뷰순">리뷰가 많은순
 					<input type="radio" name="food_pick" value="별점순">별점이 높은순
 					<input type="submit" value="검색">
@@ -154,11 +158,11 @@
 				</form>
 				<div style="text-align: center;">${food_pick }</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg" onclick="imgclick1()">
+					<img alt="" src="image/pic1.jpg" onclick="imgclick1()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg" onclick="imgclick2()">
+					<img alt="" src="image/pic1.jpg" onclick="imgclick2()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 			</fieldset>
@@ -166,7 +170,7 @@
 		<div>
 			<fieldset>
 				<legend>이달의 추천 가게</legend>
-				<form style="text-align: center;" action="/MyController" method="post">
+				<form style="text-align: center;" action="${pageContext.request.contextPath}/MyController" method="post">
 					<input type="radio" name="restaurant_pick" value="리뷰순">리뷰가 많은순
 					<input type="radio" name="restaurant_pick" value="별점순">별점이 높은순
 					<input type="submit" value="검색">
@@ -174,11 +178,11 @@
 				</form>
 				<div style="text-align: center;">${restaurant_pick }</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg" onclick="imgclick3()">
+					<img alt="" src="image/pic1.jpg" onclick="imgclick3()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg" onclick="imgclick4()">
+					<img alt="" src="image/pic1.jpg" onclick="imgclick4()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 			</fieldset>

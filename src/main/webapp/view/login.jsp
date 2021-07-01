@@ -31,29 +31,6 @@
 		width: 30%;
 		text-align: right;
 	}
-	#menu_id
-	{
-		width: 80%;
-		text-align: center;
-		margin-top: 3%;
-		margin-left: 10%;
-	}
-	
-	#menu_id > div
-	{
-		width: 23%;
-		height: 40px;
-		display: inline-block;
-		text-align: center;
-		cursor: pointer;
-		line-height: 40px;
-		margin: auto;	
-		background-color: gray;
-	}
-	#menu_id > div > a
-	{
-		display: block;
-	}
 	a
 	{
 		text-decoration: none;
@@ -65,7 +42,7 @@
 		width: 100%;
 		height: 60px;
 		font-size: 10px;
-		margin-top: 40%;
+		margin-bottom: 0px;
 		padding: 10px;
 	}
 	a:hover
@@ -73,11 +50,63 @@
 		color: silver;
 		cursor: pointer;
 	}
-	#menu_id > div:hover
+	#field
 	{
-		background-color: black;
+		margin-top: 8%;
+		margin-left: 5%;
+		margin-bottom: 8%;
+		width: 90%;
+		font-size: 20px;
+		height: 300px;
+	}
+	#id_pw
+	{
+		width: 65%;
+		text-align: right;
+		float: left;
+	}
+	.inp
+	{
+		width: 60%;
+		height: 30px;
+		margin-top: 4%;
+		margin-bottom: 2%;
+	}
+	#log_btn
+	{
+		width: 15%;
+		height: 100px;
+		margin-left: 5%;
+		margin-top: 4%;
+		margin-bottom: 4%;
+	}
+	.inp
+	{
+		margin-left: 3%;
+	}
+	#log_div
+	{
+		text-align: center;
+		margin: auto;
+	}
+	.log_btn
+	{
+		width: 30%;
+		height: 60px;
+	}
+	#find
+	{
+		font-size: 15px;
+		text-align: center;
+		margin-top: 3%;
 	}
 </style>
+<script type="text/javascript">
+	function master() 
+	{
+		location.href="${pageContext.request.contextPath}/MyController?cmd=master";
+	}
+</script>
 </head>
 <body>
 	<div>
@@ -98,14 +127,29 @@
 			</div>
 		</div>
 	</div><br>
-	<!-- 메뉴바 -->
 	<div>
-		<div id="menu_id">
-			<div><a href="search.jsp">검색</a></div>
-			<div><a href="food_restaurant.jsp">음식 및 음식점 추천</a></div>
-			<div><a href="board.jsp">게시판</a></div>
-			<div><a href="mypage.jsp">마이페이지</a></div>
-		</div>
+		<fieldset id="field">
+			<form action="main.jsp" method="post">
+				<div id="id_pw">
+					ID <input type="text" name="id" placeholder="아이디 입력" class="inp"><br>
+					PW <input type="text" name="id" placeholder="비밀번호 입력" class="inp"><br>
+					<input type="radio" name="login" value="">영업주로 로그인
+					<input type="radio" name="login" value="">일반 사용자로 로그인
+				</div>
+				<div>
+					<input type="submit" value="로그인" id="log_btn">
+					<input type="hidden" name="cmd" value="log">
+				</div>
+				<div id="log_div">
+					<input type="button" value="카카오톡 아이디로 로그인" class="log_btn">
+					<input type="button" value="관리자로 로그인" class="log_btn" onclick="master()">
+				</div>
+				<div id="find">
+					<a href="idfind.jsp"> ID 찾기 </a> |
+					<a href="pwfind.jsp"> PW 찾기 </a>
+				</div>
+			</form>
+		</fieldset>
 	</div>
 	<div>
 		<footer>footer정보</footer>

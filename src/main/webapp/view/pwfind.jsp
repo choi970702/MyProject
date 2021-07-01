@@ -52,29 +52,47 @@
 	}
 	#field
 	{
-		width: 90%;
-		margin-top: 5%;
-		margin-bottom: 5%;
-		text-align: center;
+		margin-top: 8%;
 		margin-left: 5%;
-		height: 350px;
+		margin-bottom: 8%;
+		width: 90%;
+		font-size: 20px;
+		height: 300px;
 	}
-	input
+	#id_pw
 	{
-		margin-top: 1%;
+		width: 65%;
+		text-align: right;
+		float: left;
 	}
-	#join
+	.inp
 	{
-		width: 10%;
+		width: 60%;
 		height: 30px;
+		margin-top: 4%;
+		margin-bottom: 2%;
+		margin-left: 3%;
+	}
+	#log_btn
+	{
+		width: 15%;
+		height: 100px;
+		margin-left: 5%;
+		margin-top: 4%;
+		margin-bottom: 4%;
+	}
+	#log_div
+	{
+		text-align: center;
+		margin: auto;
+		padding-top: 10%;
+	}
+	.log_btn
+	{
+		width: 20%;
+		height: 60px;
 	}
 </style>
-<script type="text/javascript">
-	function id_test(f) 
-	{
-		document.getElementById("ptag").style.display="block";
-	}
-</script>
 </head>
 <body>
 	<div>
@@ -97,20 +115,16 @@
 	</div><br>
 	<div>
 		<fieldset id="field">
-			<form action="main.jsp">
-				*아이디 : <input type="text" name="id" placeholder="아이디 입력" required>
-				<input type="button" value="중복 확인" onclick="id_test(this.form)"><br>
-				<p id="ptag" style="font-size: 3px; display: none;">사용 가능한 아이디 입니다.</p>
-				*비밀번호 : <input type="password" name="pw" placeholder="비밀번호 입력" required><br>
-				*비밀번호 재입력 : <input type="password" name="pw_test" placeholder="비밀번호 입력" required><br>
-				*전화번호 : <input type="number" name="tel_num" placeholder="전화번호 입력" required><br>
-				성별 : <input type="radio" name="gender" value="남자">남자
-					<input type="radio" name="gender" value="여자">여자<br>
-				*이메일 : <input type="email" name="email" placeholder="이메일 입력" required><br>
-				사용자 : <input type="radio" name="user" value="영업주">영업주
-					<input type="radio" name="user" value="일반 사용자">일반 사용자<br>
-				<input type="submit" name="cmd" value="Join" id="join">
-				
+			<form action="login.jsp" method="post">
+				<div id="id_pw">
+					*ID <input type="text" name="id" placeholder="아이디 입력" class="inp" required><br>
+					*이메일 <input type="email" name="email" placeholder="이메일 입력" class="inp" required><br>
+					*전화번호 <input type="number" name="tel_num" placeholder="전화번호 입력" class="inp" required><br>
+				</div>
+				<div id="log_div">
+					<input type="submit" value="비밀번호 찾기" class="log_btn">
+					<input type="hidden" name="cmd" value="pw_find">
+				</div>
 			</form>
 		</fieldset>
 	</div>

@@ -110,7 +110,10 @@
 	}
 </style>
 <script type="text/javascript">
-	
+	function boardlist() 
+	{
+		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
+	}
 </script>
 </head>
 <body>
@@ -137,7 +140,7 @@
 		<div id="menu_id">
 			<div><a href="search.jsp">검색</a></div>
 			<div><a href="food_restaurant.jsp">음식 및 음식점 추천</a></div>
-			<div><a href="board.jsp">게시판</a></div>
+			<div><a onclick="boardlist()">게시판</a></div>
 			<div><a href="mypage.jsp">마이페이지</a></div>
 		</div>
 	</div>

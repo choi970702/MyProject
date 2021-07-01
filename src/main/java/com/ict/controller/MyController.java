@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ict.model.BoardlistCommand;
 import com.ict.model.Command;
 import com.ict.model.MainCommand;
+import com.ict.model.MasterCommand;
 import com.ict.model.PickCommand;
 import com.ict.model.Search_ChooseCommand;
 
@@ -45,8 +47,13 @@ public class MyController extends HttpServlet
 		}else if(cmd.equalsIgnoreCase("pick"))
 		{
 			comm = new PickCommand();
+		}else if(cmd.equalsIgnoreCase("boardlist"))
+		{
+			comm = new BoardlistCommand();
+		}else if(cmd.equalsIgnoreCase("master"))
+		{
+			comm = new MasterCommand();
 		}
-		
 		String path = comm.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
 		

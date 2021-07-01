@@ -130,6 +130,10 @@
 	{
 		
 	}
+	function boardlist() 
+	{
+		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
+	}
 </script>
 </head>
 <body>
@@ -155,12 +159,12 @@
 		<div id="menu_id">
 			<div><a href="view/search.jsp">검색</a></div>
 			<div><a href="view/food_restaurant.jsp">음식 및 음식점 추천</a></div>
-			<div><a href="view/board.jsp">게시판</a></div>
+			<div><a onclick="boardlist()">게시판</a></div>
 			<div><a href="view/mypage.jsp">마이페이지</a></div>
 		</div>
 	</div>
 	<div id="choice">
-		<form action="/MyController" method="post">
+		<form action="${pageContext.request.contextPath}/MyController" method="post">
 			<select name="choice">
 				<option value="foodname">음식이름으로 검색</option>
 				<option value="restaurant">가게 이름으로 검색</option>
@@ -177,13 +181,13 @@
 			<legend>${choice }, ${choose }</legend>
 			<fieldset id="field_left">
 				<div>
-					<img alt="" src="../image/pic1.jpg" onclick="imgclick1()">
+					<img alt="" src="image/pic1.jpg" onclick="imgclick1()">
 					<textarea cols="" rows="10">
 						~~~~~~~~~~~~~~~~~~~~~~~
 					</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic2.jpg" onclick="imgclick2()">
+					<img alt="" src="image/pic2.jpg" onclick="imgclick2()">
 					<textarea cols="" rows="10">
 						~~~~~~~~~~~~~~~~~~~~~~~
 					</textarea>
@@ -191,13 +195,13 @@
 			</fieldset>
 			<fieldset id="field_right">
 				<div>
-					<img alt="" src="../image/pic3.jpg" onclick="imgclick3()">
+					<img alt="" src="image/pic3.jpg" onclick="imgclick3()">
 					<textarea cols="" rows="10">
 						~~~~~~~~~~~~~~~~~~~~~~~
 					</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic_trulli.jpg" onclick="imgclick4()">
+					<img alt="" src="image/pic_trulli.jpg" onclick="imgclick4()">
 					<textarea cols="" rows="10">
 						~~~~~~~~~~~~~~~~~~~~~~~
 					</textarea>

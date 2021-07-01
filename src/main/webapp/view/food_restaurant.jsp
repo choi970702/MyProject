@@ -96,6 +96,12 @@
 		height: 50%;
 	}
 </style>
+<script type="text/javascript">
+	function boardlist() 
+	{
+		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
+	}
+</script>
 </head>
 <body>
 	<div>
@@ -121,16 +127,16 @@
 		<div id="menu_id">
 			<div><a href="search.jsp">검색</a></div>
 			<div><a href="food_restaurant.jsp">음식 및 음식점 추천</a></div>
-			<div><a href="board.jsp">게시판</a></div>
+			<div><a onclick="boardlist()">게시판</a></div>
 			<div><a href="mypage.jsp">마이페이지</a></div>
 		</div>
 	</div>
 	<div>
 			<fieldset>
 				<legend>이달의 추천 음식</legend>
-				<form style="text-align: center;" action="/MyController" method="post">
-					<input type="radio" name="food_pick" value="food_review">리뷰가 많은순
-					<input type="radio" name="food_pick" value="food_star">별점이 높은순
+				<form style="text-align: center;" action="../MyController" method="post">
+					<input type="radio" name="food_pick" value="리뷰순">리뷰가 많은순
+					<input type="radio" name="food_pick" value="별점순">별점이 높은순
 					<input type="submit" value="검색">
 					<input type="hidden" name="cmd" value="pick">
 				</form>
@@ -147,9 +153,9 @@
 		<div>
 			<fieldset>
 				<legend>이달의 추천 가게</legend>
-				<form style="text-align: center;" action="/MyController" method="post">
-					<input type="radio" name="restaurant_pick" value="food_review">리뷰가 많은순
-					<input type="radio" name="restaurant_pick" value="food_star">별점이 높은순
+				<form style="text-align: center;" action="../MyController" method="post">
+					<input type="radio" name="restaurant_pick" value="리뷰순">리뷰가 많은순
+					<input type="radio" name="restaurant_pick" value="별점순">별점이 높은순
 					<input type="submit" value="검색">
 					<input type="hidden" name="cmd" value="pick">
 				</form>
