@@ -78,6 +78,21 @@
 	{
 		background-color: black;
 	}
+	table, tr, td
+	{
+		border: 1px solid gray;
+	}
+	table
+	{
+		width: 30%;
+		float: left;
+		margin-left: 3%;
+		height: 300px;
+		margin-top: 3%;
+		text-align: center;
+	}
+	th{background-color: darkgray;}
+	td{background-color: #F6F6F6;}
 </style>
 <script type="text/javascript">
 	function boardlist() 
@@ -122,10 +137,34 @@
 				</tr>
 			</thead>
 			<tbody>
+				<c:choose>
+					<c:when test="${empty list}">
+				 	  <tr><td colspan="4"><h2>원하시는 자료가 존재하지 않습니다</h2></td></tr>
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="k" items="${list}" varStatus="vs">
+							<tr>
+								<td style="text-align: left;">
+								<a href="${pageContext.request.contextPath}/MyController?cmd=onelist&idx=${k.idx}&cPage=${pvo.nowPage}">${k.title }</a>
+								</td>
+								<td><button>수정하기</button></td>
+								<td><button>삭제</button></td>
+							</tr>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
 				<tr>
-					<td><a>문의1</a></td>
+					<td colspan="3">예시</td>
+				</tr>
+				<tr>
+					<td style="width: 50%;"><a>문의1</a></td>
 					<td><button>수정하기</button></td>
 					<td><button>삭제</button></td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<button onclick="write1()">작성</button>
+					</td>
 				</tr>
 			</tbody>
 			<tfoot>
@@ -136,11 +175,24 @@
 		<table>
 			<thead>
 				<tr>
-					<th colspan="3">정보 수정</th>
+					<th colspan="2">정보 수정</th>
 				</tr>
 			</thead>
 			<tbody>
-				
+				<tr>
+					<td colspan="2">비밀번호 번경</td>
+				</tr>
+				<tr>
+					<td><input type="text"></td>
+					<td><input type="button" value="클릭"></td>
+				</tr>
+				<tr>
+					<td colspan="2">연락처 번경</td>
+				</tr>
+				<tr>
+					<td><input type="text"></td>
+					<td><input type="button" value="클릭"></td>
+				</tr>
 			</tbody>
 			<tfoot>
 				
@@ -154,7 +206,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				
+				<tr>
+					<td>가게 1</td>
+					<td><button>삭제</button></td>
+				</tr>
+				<tr>
+					<td>가게 2</td>
+					<td><button>삭제</button></td>
+				</tr>
 			</tbody>
 			<tfoot>
 				

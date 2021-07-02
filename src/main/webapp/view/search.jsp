@@ -128,12 +128,12 @@
 	<div id="choice">
 		<form action="../MyController" method="post">
 			<select name="choice">
-				<option value="foodname">음식이름으로 검색</option>
-				<option value="restaurant">가게 이름으로 검색</option>
+				<option value="음식이름">음식이름으로 검색</option>
+				<option value="가게이름">가게 이름으로 검색</option>
 			</select>
-			<input type="radio" name="choose" value="distance">거리순
-			<input type="radio" name="choose" value="review">리뷰순
-			<input type="radio" name="choose" value="star">별점이 높은 순
+			<input type="radio" name="choose" value="거리순">거리순
+			<input type="radio" name="choose" value="리뷰순">리뷰순
+			<input type="radio" name="choose" value="별점순">별점이 높은 순
 			<input type="submit" value="검색">
 			<input type="hidden" name="cmd" value="search_choose">
 		</form>

@@ -202,8 +202,8 @@
 					</tbody>
 				</table>
 				<form id="review">
-					<input id="review_btn" type="submit" value="search">
 					<input id="review_write" type="text" placeholder="리뷰쓰기">
+					<input id="review_btn" type="submit" value="write">
 				</form>
 			</div>
 			<div>
