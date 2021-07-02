@@ -95,6 +95,14 @@
 	td{background-color: #F6F6F6;}
 </style>
 <script type="text/javascript">
+	function write1() 
+	{
+		location.href="write3.jsp";
+	}
+	function write2() 
+	{
+		location.href="write4.jsp";
+	}
 	function boardlist() 
 	{
 		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
@@ -158,7 +166,7 @@
 				</tr>
 				<tr>
 					<td style="width: 50%;"><a>문의1</a></td>
-					<td><button>수정하기</button></td>
+					<td><button onclick="write2()">수정하기</button></td>
 					<td><button>삭제</button></td>
 				</tr>
 				<tr>

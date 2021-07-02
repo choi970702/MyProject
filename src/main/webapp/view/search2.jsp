@@ -120,15 +120,15 @@
 	}
 	function imgclick2() 
 	{
-		
+		location.href="view/onelist.jsp";
 	}
 	function imgclick3() 
 	{
-		
+		location.href="view/onelist.jsp";
 	}
 	function imgclick4() 
 	{
-		
+		location.href="view/onelist.jsp";
 	}
 	function boardlist() 
 	{

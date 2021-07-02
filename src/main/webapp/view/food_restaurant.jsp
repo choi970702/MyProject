@@ -97,6 +97,22 @@
 	}
 </style>
 <script type="text/javascript">
+	function imgclick1() 
+	{
+		location.href="onelist.jsp";
+	}
+	function imgclick2() 
+	{
+		location.href="onelist.jsp";
+	}
+	function imgclick3() 
+	{
+		location.href="onelist.jsp";
+	}
+	function imgclick4() 
+	{
+		location.href="onelist.jsp";
+	}
 	function boardlist() 
 	{
 		location.href="${pageContext.request.contextPath}/MyController?cmd=boardlist&cPage=${cPage}";
@@ -141,11 +157,11 @@
 					<input type="hidden" name="cmd" value="pick">
 				</form>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick1()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick2()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 			</fieldset>
@@ -160,11 +176,11 @@
 					<input type="hidden" name="cmd" value="pick">
 				</form>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick3()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 				<div>
-					<img alt="" src="../image/pic1.jpg">
+					<img alt="" src="../image/pic1.jpg" onclick="imgclick4()">
 					<textarea>~~~~~~~~~~~</textarea>
 				</div>
 			</fieldset>
